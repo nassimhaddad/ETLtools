@@ -1,0 +1,9 @@
+Package: ETLtools
+Title: ETLtools
+Version: 0.0.0.9000
+Authors@R: person("Nassim", "Haddad", , "nassim.hd@gmail.com", role = c("aut", "cre"))
+Description: Tools to facilitate ETLing in R
+Depends: R (>= 3.1.2)
+License: file LICENSE
+LazyData: true
+Imports: jsonlite
