@@ -2,22 +2,22 @@
 % Please edit documentation in R/run_script.R
 \name{run_script}
 \alias{run_script}
-\title{Function to take over an existing scripts with standard parameters
-to allow for standardized etl processing}
+\title{Run an existing script with a certain structure while
+checking if computations are necessary.}
 \usage{
 run_script(file, outputFiles, inputFiles = NULL, parameters = NULL)
 }
 \arguments{
-\item{file}{}
+\item{file}{path of the .R script to run}
 
-\item{outputFiles}{}
+\item{outputFiles}{files to be created by the script}
 
-\item{inputFiles}{}
+\item{inputFiles}{files used as an input by the script}
 
-\item{parameters}{}
+\item{parameters}{additional parameters, as a list}
 }
 \description{
-Function to take over an existing scripts with standard parameters
-to allow for standardized etl processing
+Run an existing script with a certain structure while
+checking if computations are necessary.
 }
 

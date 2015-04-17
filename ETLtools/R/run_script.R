@@ -1,10 +1,11 @@
-#' Function to take over an existing scripts with standard parameters
-#' to allow for standardized etl processing
+#' Run an existing script with a certain structure while
+#' checking if computations are necessary.
 #' 
-#' @param file
-#' @param outputFiles
-#' @param inputFiles
-#' @param parameters
+#' @param file path of the .R script to run
+#' @param outputFiles files to be created by the script
+#' @param inputFiles files used as an input by the script
+#' @param parameters additional parameters, as a list
+#' 
 #' 
 #' @export
 #' 
@@ -17,8 +18,6 @@ run_script <- function(file, outputFiles, inputFiles = NULL, parameters = NULL){
   # for compatibility with JSON
   if (is.null(inputFiles)){inputFiles <- list()}
   if (is.null(parameters)){parameters <- list()}
-  # helper function
-  file.date <- function(file){out <- lapply(file, function(x)file.info(x)$mtime); do.call(c, out)}
   # extract meta data
   meta <- list(file = file, outputFiles = outputFiles, inputFiles = inputFiles, parameters = parameters)
   # where metadata is stored
