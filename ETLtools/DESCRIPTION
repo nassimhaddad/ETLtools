@@ -7,3 +7,5 @@ Depends: R (>= 3.1.2)
 License: file LICENSE
 LazyData: true
 Imports: jsonlite
+Suggests: knitr
+VignetteBuilder: knitr
