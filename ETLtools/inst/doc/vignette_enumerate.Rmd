@@ -1,0 +1,37 @@
+---
+title: "Enumerate-like functionality"
+author: "Nassim Haddad"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Enumerate}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+When using loop-like constructs, either via a regular `for` loop, or with `lapply`, you normally have to choose between iterating over the object itself or over its index.  
+The idea of what follows is to offer you the possibility to have both at once.
+
+## Option 1: use `enumerate()`
+
+`enumerate()` enriches the object of the for-loop with the iteration number, which can then be accessed via `i_()`. Here is an example:
+
+```{r}
+random_numbers <- rnorm(3)
+print(random_numbers)
+```
+
+```{r}
+library(ETLtools)
+for (x in enumerate(random_numbers)){
+  print(list(iteration = i_(x), value = x))
+}
+```
+
+## Option 2: use `enumapply()`
+
+A more "R-ish" way of looping is via the apply-family. To match this style you can use `enumapply()`. The index will be passed to the function as a second argument.
+
+```{r}
+enumapply(rnorm(3), function(x, i)list(iteration = i,value = x))
+```
